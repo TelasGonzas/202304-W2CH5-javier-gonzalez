@@ -1,10 +1,17 @@
-const coders = [3, 8, 10, 2];
+const coders = ["Marta", "Luis", "Pere"];
 
-const lengthFunction = (coder) => {
+export const lengthFunction = (coder) => {
   let i = 0;
   for (i in coder) {
     i++;
   }
 
   return i;
+};
+
+const pushFunction = (coder, ...newPush) => {
+  const actualArray = [...coder];
+  const all = [...actualArray, ...newPush];
+
+  return lengthFunction(all);
 };
