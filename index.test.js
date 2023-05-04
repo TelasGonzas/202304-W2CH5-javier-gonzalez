@@ -10,6 +10,24 @@ describe("Given a lenghtFunction function", () => {
       expect(checkLenght).toBe(2);
     });
   });
+  describe("When it receives []", () => {
+    test("Then it should return 0", () => {
+      const valueA = [];
+
+      const checkLenght = lengthFunction(valueA);
+
+      expect(checkLenght).toBe(0);
+    });
+  });
+  describe("When it receives [2, true, 'Cecina', NaN]", () => {
+    test("Then it should return 4", () => {
+      const valueA = [2, true, "Cecina", NaN];
+
+      const checkLenght = lengthFunction(valueA);
+
+      expect(checkLenght).toBe(4);
+    });
+  });
 });
 
 describe("Given a pushFunction function", () => {
@@ -34,6 +52,16 @@ describe("Given a pushFunction function", () => {
       expect(checkPush).toBe(4);
     });
   });
+  describe("When it receives [2, 3, 4] and ''", () => {
+    test("Then it should return 4", () => {
+      const valueA = [2, 3, 4];
+      const valueB = "";
+
+      const checkPush = pushFunction(valueA, valueB);
+
+      expect(checkPush).toBe(4);
+    });
+  });
 });
 
 describe("Given a findFunction function", () => {
@@ -43,6 +71,28 @@ describe("Given a findFunction function", () => {
       const parameter = "Marta";
 
       const expectedResult = true;
+      const expectedValue = findFunction(coders, parameter);
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+  describe("When it receives `Taco`", () => {
+    test("Then it should return false", () => {
+      const coders = ["Marta", "Luis", "Pere"];
+      const parameter = "Taco";
+
+      const expectedResult = false;
+      const expectedValue = findFunction(coders, parameter);
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+  describe("When it receives `23`", () => {
+    test("Then it should return false", () => {
+      const coders = ["Marta", "Luis", "Pere", 23];
+      const parameter = "23";
+
+      const expectedResult = false;
       const expectedValue = findFunction(coders, parameter);
 
       expect(expectedValue).toBe(expectedResult);
