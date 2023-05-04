@@ -8,5 +8,3 @@ const lengthFunction = (coder) => {
 
   return i;
 };
-
-console.log(lengthFunction(coders));
