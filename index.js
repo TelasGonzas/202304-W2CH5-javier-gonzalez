@@ -1,5 +1,17 @@
 const coders = ["Marta", "Luis", "Pere"];
 
+export const findFunction = (coder, parameter) => {
+  const length = lengthFunction(coder);
+
+  for (let i = 0; i < length; i++) {
+    if (coder[i] === parameter) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 export const lengthFunction = (coder) => {
   let i = 0;
   for (i in coder) {
@@ -9,7 +21,7 @@ export const lengthFunction = (coder) => {
   return i;
 };
 
-const pushFunction = (coder, ...newPush) => {
+export const pushFunction = (coder, ...newPush) => {
   const actualArray = [...coder];
   const all = [...actualArray, ...newPush];
 
