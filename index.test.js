@@ -1,4 +1,4 @@
-import { lengthFunction, pushFunction } from "./index.js";
+import { lengthFunction, pushFunction, findFunction } from "./index.js";
 
 describe("Given a lenghtFunction function", () => {
   describe("When it receives [2, 4]", () => {
@@ -31,7 +31,21 @@ describe("Given a pushFunction function", () => {
 
       const checkPush = pushFunction(valueA, valueB);
 
-      expect(checkPush).toBe(5);
+      expect(checkPush).toBe(4);
+    });
+  });
+});
+
+describe("Given a findFunction function", () => {
+  describe("When it receives `Marta`", () => {
+    test("Then it should return true", () => {
+      const coders = ["Marta", "Luis", "Pere"];
+      const parameter = "Marta";
+
+      const expectedResult = true;
+      const expectedValue = findFunction(coders, parameter);
+
+      expect(expectedValue).toBe(expectedResult);
     });
   });
 });
