@@ -10,6 +10,7 @@ describe("Given a lenghtFunction function", () => {
       expect(checkLenght).toBe(2);
     });
   });
+
   describe("When it receives []", () => {
     test("Then it should return 0", () => {
       const valueA = [];
@@ -19,6 +20,7 @@ describe("Given a lenghtFunction function", () => {
       expect(checkLenght).toBe(0);
     });
   });
+
   describe("When it receives [2, true, 'Cecina', NaN]", () => {
     test("Then it should return 4", () => {
       const valueA = [2, true, "Cecina", NaN];
@@ -76,6 +78,7 @@ describe("Given a findFunction function", () => {
       expect(expectedValue).toBe(expectedResult);
     });
   });
+
   describe("When it receives `Taco`", () => {
     test("Then it should return false", () => {
       const coders = ["Marta", "Luis", "Pere"];
@@ -87,6 +90,7 @@ describe("Given a findFunction function", () => {
       expect(expectedValue).toBe(expectedResult);
     });
   });
+
   describe("When it receives `23`", () => {
     test("Then it should return false", () => {
       const coders = ["Marta", "Luis", "Pere", 23];
