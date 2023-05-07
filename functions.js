@@ -28,11 +28,11 @@ export const findFunction = (coder, parameter) => {
   return false;
 };
 
-export const reduceFunction = (coder, callback) => {
-  let result = coder[0];
+export const reduceFunction = (coders, callback) => {
+  let result = coders[0];
 
-  for (let i = 1; i < coder.length; i++) {
-    result = callback(result, coder[i]);
+  for (let i = 1; i < coders.length; i++) {
+    result = callback(result, coders[i]);
   }
 
   return result;
