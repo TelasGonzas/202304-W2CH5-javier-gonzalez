@@ -18,7 +18,7 @@ export const pushFunction = (coder, ...newPush) => {
   return coder.length;
 };
 
-export const findFunction = (coder, parameter) => {
+export const someFunction = (coder, parameter) => {
   const length = lengthFunction(coder);
 
   for (let i = 0; i < length; i++) {
@@ -28,6 +28,16 @@ export const findFunction = (coder, parameter) => {
   }
 
   return false;
+};
+
+export const findFunction = (coder, callback) => {
+  for (let i = 0; i < coder.length; i++) {
+    const element = coder[i];
+
+    if (callback(element)) {
+      return element;
+    }
+  }
 };
 
 export const reduceFunction = (coders, callback) => {
