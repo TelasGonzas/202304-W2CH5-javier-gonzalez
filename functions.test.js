@@ -1,6 +1,7 @@
 import {
   lengthFunction,
   pushFunction,
+  someFunction,
   findFunction,
   reduceFunction,
 } from "./functions.js";
@@ -71,14 +72,14 @@ describe("Given a pushFunction function", () => {
   });
 });
 
-describe("Given a findFunction function", () => {
+describe("Given a someFunction function", () => {
   describe("When it receives `Marta`", () => {
     test("Then it should return true", () => {
       const coders = ["Marta", "Luis", "Pere"];
       const parameter = "Marta";
 
       const expectedResult = true;
-      const expectedValue = findFunction(coders, parameter);
+      const expectedValue = someFunction(coders, parameter);
 
       expect(expectedValue).toBe(expectedResult);
     });
@@ -90,7 +91,7 @@ describe("Given a findFunction function", () => {
       const parameter = "Taco";
 
       const expectedResult = false;
-      const expectedValue = findFunction(coders, parameter);
+      const expectedValue = someFunction(coders, parameter);
 
       expect(expectedValue).toBe(expectedResult);
     });
@@ -102,7 +103,20 @@ describe("Given a findFunction function", () => {
       const parameter = "23";
 
       const expectedResult = false;
-      const expectedValue = findFunction(coders, parameter);
+      const expectedValue = someFunction(coders, parameter);
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given the function findFunction", () => {
+  describe("When it receives 1, 2, 3, 4, 5 and we find 5", () => {
+    test("Then it should return the 5", () => {
+      const numberArray = [1, 2, 3, 4, 5];
+
+      const expectedResult = 5;
+      const expectedValue = findFunction(numberArray, (item) => item === 5);
 
       expect(expectedValue).toBe(expectedResult);
     });
