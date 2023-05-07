@@ -1,4 +1,9 @@
-import { lengthFunction, pushFunction, findFunction } from "./index.js";
+import {
+  lengthFunction,
+  pushFunction,
+  findFunction,
+  reduceFunction,
+} from "./functions.js";
 
 describe("Given a lenghtFunction function", () => {
   describe("When it receives [2, 4]", () => {
@@ -98,6 +103,48 @@ describe("Given a findFunction function", () => {
 
       const expectedResult = false;
       const expectedValue = findFunction(coders, parameter);
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+});
+
+describe("Given the reduceFunction", () => {
+  describe("When ir receives 23, 69, 420 and we want to sum", () => {
+    test("Then it should return 512", () => {
+      const numbersToSum = [23, 69, 420];
+
+      const expectedResult = 512;
+      const expectedValue = reduceFunction(
+        numbersToSum,
+        (valueA, valueB) => valueA + valueB
+      );
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+  describe("When ir receives 23, 69, 0 and we want to sum", () => {
+    test("Then it should return 0", () => {
+      const numbersToSum = [23, 69, 0];
+
+      const expectedResult = 0;
+      const expectedValue = reduceFunction(
+        numbersToSum,
+        (valueA, valueB) => valueA * valueB
+      );
+
+      expect(expectedValue).toBe(expectedResult);
+    });
+  });
+  describe("When ir receives 'rosa' 'melano' and we want to sum", () => {
+    test("Then it should return 'rosamelano'", () => {
+      const numbersToSum = ["rosa", "melano"];
+
+      const expectedResult = "rosamelano";
+      const expectedValue = reduceFunction(
+        numbersToSum,
+        (valueA, valueB) => valueA + valueB
+      );
 
       expect(expectedValue).toBe(expectedResult);
     });
