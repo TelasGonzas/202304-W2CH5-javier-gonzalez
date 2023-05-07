@@ -10,10 +10,12 @@ export const lengthFunction = (coder) => {
 };
 
 export const pushFunction = (coder, ...newPush) => {
-  const actualArray = [...coder];
-  const all = [...actualArray, ...newPush];
+  const actualArray = [...newPush];
+  for (let i = 0; i < actualArray.length; i++) {
+    coder[coder.length] = actualArray[i];
+  }
 
-  return lengthFunction(all);
+  return coder.length;
 };
 
 export const findFunction = (coder, parameter) => {
